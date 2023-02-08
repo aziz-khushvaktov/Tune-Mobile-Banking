@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Tune Mobile Banking</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="str_kartalar">Kartalar</string>
+    <string name="str_hammasi">Hammasi</string>
+    <string name="str_sevimli">Sevimli</string>
+    <string name="str_uzcard">UzCard</string>
+    <string name="str_humo">HUMO</string>
+    <string name="str_xalqaro">Xalqaro kartalar</string>
+    <string name="str_asosoy_karta">Asosiy karta</string>
+    <string name="str_rf">RF kartalari</string>
+    <string name="str_karta_qoshish">Karta qo\'shish</string>
+    <string name="str_karta_malumotlari">Karta ma\'lumotlarini kiriting</string>
+    <string name="str_karta_raqami">Karta raqami</string>
+    <string name="str_amal_qilish_sanasi">Amal qilish sanasi</string>
+
+</resources>

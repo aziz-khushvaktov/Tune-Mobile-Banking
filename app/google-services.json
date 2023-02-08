@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "618315062498",
+    "project_id": "tune-mobile-banking-8e0f0",
+    "storage_bucket": "tune-mobile-banking-8e0f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618315062498:android:92c856bbd1c0f757d6d2bb",
+        "android_client_info": {
+          "package_name": "com.example.tunemobilebanking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "618315062498-q2i5np4kassdj7b10d1rkjpjoattf45q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVoxgDbi9WNThjcELenYBDI_RQvxlZ0gs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "618315062498-q2i5np4kassdj7b10d1rkjpjoattf45q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
