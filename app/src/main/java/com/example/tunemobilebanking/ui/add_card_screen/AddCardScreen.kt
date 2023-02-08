@@ -8,14 +8,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.tunemobilebanking.R
+import com.example.tunemobilebanking.common.Resource
 import com.example.tunemobilebanking.databinding.FragmentAddCardScreenBinding
+import com.example.tunemobilebanking.domain.model.Card
+import com.example.tunemobilebanking.ui.home_screen.CardViewModel
 
 
 class AddCardScreen : Fragment() {
 
     private val binding by lazy { FragmentAddCardScreenBinding.inflate(layoutInflater) }
+    private val viewModel : CardViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,9 +34,16 @@ class AddCardScreen : Fragment() {
 
     private fun initViews() {
 
+
         binding.ivBack.setOnClickListener {
             findNavController().navigate(R.id.homeScreen)
         }
+
+        binding.bContinue.setOnClickListener {
+            val card = Card((System.currentTimeMillis()/2).toString(),binding.etCardNumber.text.toString(),binding.etExpireDate.text.toString())
+            viewModel.addCard(card)
+        }
+
 
 
         val textWatcher: TextWatcher = object : TextWatcher {

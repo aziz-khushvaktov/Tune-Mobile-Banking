@@ -7,13 +7,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tunemobilebanking.Card
+import com.example.tunemobilebanking.domain.model.Card
 import com.example.tunemobilebanking.databinding.ItemCardBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 class HomeScreenAdapter : ListAdapter<Card, HomeScreenAdapter.Vh>(MyDiffUtil()) {
 
     inner class Vh(var binding: ItemCardBinding, var context: Context): RecyclerView.ViewHolder(binding.root) {
         fun onBind(card: Card) {
+            binding.tvCardNumber.text = card.cardNumber
+            binding.tvExpireDate.text = card.expireDate
             if(adapterPosition == 0) {
                 binding.tvMainCard.visibility = View.VISIBLE
                 binding.tvOylik.visibility = View.VISIBLE

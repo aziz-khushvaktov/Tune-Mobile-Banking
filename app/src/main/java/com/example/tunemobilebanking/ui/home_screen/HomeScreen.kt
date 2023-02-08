@@ -1,20 +1,25 @@
 package com.example.tunemobilebanking.ui.home_screen
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.tunemobilebanking.Card
 import com.example.tunemobilebanking.R
 import com.example.tunemobilebanking.databinding.FragmentHomeScreenBinding
-import com.example.tunemobilebanking.ui.home_screen.HomeScreenAdapter
+import com.example.tunemobilebanking.domain.model.Card
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeScreen : Fragment() {
 
     private val binding by lazy { FragmentHomeScreenBinding.inflate(layoutInflater) }
     private val adapter by lazy { HomeScreenAdapter() }
+    val viewModel: CardViewModel by viewModels()
+
+    private val cards: ArrayList<Card> = ArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,12 +34,10 @@ class HomeScreen : Fragment() {
     private fun initViews() {
         binding.ivAdd.setOnClickListener { findNavController().navigate(R.id.addCardScreen) }
 
-        val list = ArrayList<Card>()
-        for (i in 0..10) {
-            list.add(Card())
+        viewModel.cardList.observe(viewLifecycleOwner) {
+            adapter.submitList(it.data)
         }
 
-        adapter.submitList(list)
         binding.rvCards.adapter = adapter
 
         binding.tabLayout.addTab(
