@@ -15,5 +15,6 @@
     <string name="str_karta_malumotlari">Karta ma\'lumotlarini kiriting</string>
     <string name="str_karta_raqami">Karta raqami</string>
     <string name="str_amal_qilish_sanasi">Amal qilish sanasi</string>
+    <string name="str_davom_etish">Davom etish</string>
 
 </resources>
